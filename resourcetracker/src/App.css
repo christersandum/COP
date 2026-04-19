@@ -1,0 +1,186 @@
+/* ── Global styles for ResourceTracker ─────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* ── Layout ───────────────────────────────────────────────────────────────── */
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #1a1a2e;
+  color: #e0e0e0;
+}
+
+.app-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── Sidebar ──────────────────────────────────────────────────────────────── */
+
+.sidebar {
+  width: 340px;
+  min-width: 280px;
+  max-width: 400px;
+  background: #16213e;
+  border-right: 1px solid #0f3460;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Main content area ────────────────────────────────────────────────────── */
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Right panel ──────────────────────────────────────────────────────────── */
+
+.right-panel {
+  width: 320px;
+  background: #16213e;
+  border-left: 1px solid #0f3460;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+/* ── Map container ────────────────────────────────────────────────────────── */
+
+.map-container {
+  flex: 1;
+  position: relative;
+}
+
+/* ── Status badges ────────────────────────────────────────────────────────── */
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-green  { background: #1a4731; color: #4ade80; }
+.badge-blue   { background: #1e3a5f; color: #60a5fa; }
+.badge-yellow { background: #3d2c00; color: #fbbf24; }
+.badge-red    { background: #4a1a1a; color: #f87171; }
+.badge-grey   { background: #2a2a2a; color: #9ca3af; }
+
+/* ── List items ────────────────────────────────────────────────────────────── */
+
+.resource-list {
+  list-style: none;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.resource-item {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #0f3460;
+  cursor: pointer;
+  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resource-item:hover,
+.resource-item.selected {
+  background: #0f3460;
+}
+
+.resource-item-name {
+  flex: 1;
+  font-weight: 500;
+}
+
+.resource-item-sub {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+/* ── Forms ─────────────────────────────────────────────────────────────────── */
+
+.form-row {
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.form-row label {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Readiness stats ────────────────────────────────────────────────────────── */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.stat-card {
+  background: #0f3460;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat-card .stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #60a5fa;
+}
+
+.stat-card .stat-label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 0.25rem;
+}
+
+/* ── Filter bar ─────────────────────────────────────────────────────────────── */
+
+.filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #0f3460;
+  flex-wrap: wrap;
+}
+
+/* ── Scrollbar styling ──────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: #16213e; }
+::-webkit-scrollbar-thumb  { background: #0f3460; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #1d4ed8; }
