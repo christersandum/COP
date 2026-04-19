@@ -73,7 +73,7 @@ function PersonnelTab({ personnel, selectedItem, onSelectItem, onAddItem, onDepl
                 scale="s"
                 appearance="outline"
                 onClick={(e) => { e.stopPropagation(); onDeploy(p.personnel_id); }}
-                title="Deplorer"
+                title="Deplorer til operasjon"
               >
                 <calcite-icon icon="send" scale="s" />
               </calcite-button>
